@@ -7,11 +7,11 @@ import os
 OLLAMA_API_KEY = os.environ["OLLAMA_API_KEY"]
 WEBHOOK_URL = os.environ["DISCORD_WEBHOOK"]
 client = Client(
-    host="https://ollama.com/api",
+    host="https://ollama.com",
     headers={"Authorization": f"Bearer {OLLAMA_API_KEY}"}
 )
 
-response1 = ollama.generate(
+response1 = client.generate(
     model="gpt-oss:120b-cloud",
     system="you are quote generator only respond with a quote and a citation",
     prompt="what is a niche and profound philosophy quote"
